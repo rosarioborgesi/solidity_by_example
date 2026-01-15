@@ -48,6 +48,15 @@ Demonstrates how a malicious contract can permanently lock a legitimate contract
 - **Guide:** [README](src/denialOfService/README.md)
 - **Key Learning:** The importance of the "pull over push" pattern and avoiding automatic fund transfers that can fail
 
+### 🎭 Delegatecall Vulnerability
+**Location:** `src/delegateCall/`
+
+Demonstrates how mismatched storage layouts between contracts can be exploited to hijack ownership when using delegatecall, allowing an attacker to take control of a contract.
+
+- **Contracts:** `Lib.sol`, `HackMe.sol`, `Attack.sol`
+- **Guide:** [README](src/delegateCall/README.md)
+- **Key Learning:** Understanding delegatecall context, storage layout matching, and the dangers of delegatecalling to mutable addresses
+
 ## 🔗 Resources
 
 - [Solidity by Example](https://solidity-by-example.org) - Original tutorial source
