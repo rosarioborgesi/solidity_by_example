@@ -137,8 +137,7 @@ Password is stored in the next consecutive slot (+1):
 ```bash
 # Calculate next slot:
 # First slot (id):        0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d3f
-#                                                                                     ^^
-# Add 1:                                                                      3f + 1 = 40
+# Add 1:  3f + 1 = 40
 # Second slot (password): 0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d40
 
 cast storage 0x5FbDB2315678afecb367f032d93F642f64180aa3 0xf652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d40
