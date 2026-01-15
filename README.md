@@ -39,6 +39,15 @@ Demonstrates that "private" variables in Solidity are not truly private. All blo
 - **Guide:** [README](src/accessingPrivateDataHack/README.md)
 - **Key Learning:** Understanding Solidity storage layout and how to read private data using `cast storage`
 
+### ⚔️ Denial of Service Attack
+**Location:** `src/denialOfService/`
+
+Demonstrates how a malicious contract can permanently lock a legitimate contract by refusing to accept Ether refunds, rendering the entire system unusable.
+
+- **Contracts:** `KingOfEther.sol`, `Attack.sol`
+- **Guide:** [README](src/denialOfService/README.md)
+- **Key Learning:** The importance of the "pull over push" pattern and avoiding automatic fund transfers that can fail
+
 ## 🔗 Resources
 
 - [Solidity by Example](https://solidity-by-example.org) - Original tutorial source
