@@ -1,10 +1,11 @@
-# Solidity by Example - Foundry Implementation
+# Solidity Security Vulnerabilities - Foundry Implementation
 
-This repository contains code examples from [Solidity by Example](https://solidity-by-example.org) implemented and tested using **Foundry**.
+This repository contains **security vulnerability examples** (hacks) from [Solidity by Example](https://solidity-by-example.org/hacks/), implemented and tested using **Foundry**.
 
 ## 📋 About
 
-[Solidity by Example](https://solidity-by-example.org) provides excellent educational content for learning Solidity. This repository recreates those examples using Foundry, a blazing-fast Ethereum development framework written in Rust.
+[Solidity by Example](https://solidity-by-example.org/hacks/) provides educational content on common smart contract vulnerabilities. This repository recreates those vulnerability demonstrations using Foundry, allowing you to learn how these attacks work and how to prevent them in a hands-on environment.
+
 
 ## 🛠️ Prerequisites
 
@@ -19,8 +20,17 @@ This repository contains code examples from [Solidity by Example](https://solidi
 Demonstrates that "private" variables in Solidity are not truly private. All blockchain data is publicly readable through direct storage access.
 
 - **Contract:** `Vault.sol`
-- **Guide:** [README](src/accessingPrivateDataHack/README.md)
+- **Guide:** [README](src/accessingPrivateData/README.md)
 - **Key Learning:** Understanding Solidity storage layout and how to read private data using `cast storage`
+
+### 🔄 Reentrancy Attack
+**Location:** `src/reentrancy/`
+
+Demonstrates the infamous reentrancy vulnerability used in the 2016 DAO hack. Shows how malicious contracts can recursively call back into vulnerable contracts before state updates complete, draining funds.
+
+- **Contracts:** `EtherStore.sol`, `Attack.sol`
+- **Guide:** [README](src/reentrancy/README.md)
+- **Key Learning:** The Checks-Effects-Interactions pattern, reentrancy guards, and why state should be updated before external calls
 
 ### ⚔️ Denial of Service Attack
 **Location:** `src/denialOfService/`
