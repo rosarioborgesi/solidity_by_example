@@ -68,6 +68,15 @@ Demonstrates how using `tx.origin` for authentication creates a phishing vulnera
 - **Guide:** [README](src/phishingWithTxOrigin/README.md)
 - **Key Learning:** The critical difference between `tx.origin` and `msg.sender`, and why `tx.origin` should never be used for authentication
 
+### 💣 Self Destruct Vulnerability
+**Location:** `src/selfDestruct/`
+
+Demonstrates how `selfdestruct` can be weaponized to force-send ETH to any contract, breaking game logic and business rules that rely on `address(this).balance` for critical decisions.
+
+- **Contracts:** `EtherGame.sol`, `Attack.sol`
+- **Guide:** [README](src/selfDestruct/README.md)
+- **Key Learning:** Never rely on `address(this).balance` for critical logic; use internal accounting variables instead to prevent manipulation via forced ETH transfers
+
 ## 🔗 Resources
 
 - [Solidity by Example](https://solidity-by-example.org) - Original tutorial source
