@@ -32,6 +32,15 @@ Demonstrates the infamous reentrancy vulnerability used in the 2016 DAO hack. Sh
 - **Guide:** [README](src/reentrancy/README.md)
 - **Key Learning:** The Checks-Effects-Interactions pattern, reentrancy guards, and why state should be updated before external calls
 
+### 🔢 Arithmetic Overflow and Underflow
+**Location:** `src/arithmeticOverflowAndUnderflow/`
+
+Demonstrates integer overflow/underflow vulnerabilities in Solidity < 0.8.0. Shows how unchecked arithmetic can bypass security mechanisms like time locks, allowing immediate fund withdrawal.
+
+- **Contracts:** `TimeLock.sol`, `Attack.sol`
+- **Guide:** [README](src/arithmeticOverflowAndUnderflow/README.md)
+- **Key Learning:** Why Solidity 0.8.0+ is crucial for security, understanding SafeMath, and the importance of checking arithmetic operations in legacy contracts
+
 ### ⚔️ Denial of Service Attack
 **Location:** `src/denialOfService/`
 
