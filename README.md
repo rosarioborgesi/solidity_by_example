@@ -95,6 +95,15 @@ Demonstrates a honeypot - a deliberately vulnerable-looking contract that's actu
 - **Guide:** [README](src/honeyPot/README.md)
 - **Key Learning:** Understanding how type casting is unchecked, deployment parameters are hidden, and inner revert reasons are masked; demonstrating why thorough verification of external contracts is crucial before interaction
 
+### 🏃 Front Running
+**Location:** `src/frontRunning/`
+
+Demonstrates how attackers can watch the mempool and front-run profitable transactions by submitting their own transaction with higher gas fees. Also shows the **commit-reveal scheme**, a cryptographic defense that prevents front-running by binding commitments to the sender's address.
+
+- **Contracts:** `FrontRunning.sol` (vulnerable), `CommitReveal.sol` (secure)
+- **Guide:** [README](src/frontRunning/README.md)
+- **Key Learning:** Understanding mempool visibility, front-running attacks, and how commit-reveal schemes (two-phase submissions with hashed commitments) protect against transaction reordering attacks
+
 ## 🔗 Resources
 
 - [Solidity by Example](https://solidity-by-example.org) - Original tutorial source
