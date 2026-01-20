@@ -104,6 +104,15 @@ Demonstrates how attackers can watch the mempool and front-run profitable transa
 - **Guide:** [README](src/frontRunning/README.md)
 - **Key Learning:** Understanding mempool visibility, front-running attacks, and how commit-reveal schemes (two-phase submissions with hashed commitments) protect against transaction reordering attacks
 
+### 🔁 Signature Replay Attack
+**Location:** `src/signatureReplay/`
+
+Demonstrates how signatures without proper replay protection can be reused multiple times to drain funds. Shows the vulnerability in off-chain signature schemes and meta-transactions, then demonstrates the secure implementation using nonce-based replay protection.
+
+- **Contracts:** `SignatureReplay.sol` (vulnerable), `NoSignatureReplay.sol` (secure), `ECDSA.sol` (signature verification library)
+- **Guide:** [README](src/signatureReplay/README.md)
+- **Key Learning:** Understanding ECDSA signature recovery, the importance of nonces and contract address binding in signed messages, EIP-191 vs EIP-712, and how to implement secure multi-sig wallets with off-chain signatures for meta-transactions
+
 ## 🔗 Resources
 
 - [Solidity by Example](https://solidity-by-example.org) - Original tutorial source
