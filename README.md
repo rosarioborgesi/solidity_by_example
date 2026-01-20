@@ -113,6 +113,24 @@ Demonstrates how signatures without proper replay protection can be reused multi
 - **Guide:** [README](src/signatureReplay/README.md)
 - **Key Learning:** Understanding ECDSA signature recovery, the importance of nonces and contract address binding in signed messages, EIP-191 vs EIP-712, and how to implement secure multi-sig wallets with off-chain signatures for meta-transactions
 
+### 📏 Bypass Contract Size Check
+**Location:** `src/bypassContractSizeCheck/`
+
+Demonstrates how the `extcodesize` check can be bypassed during contract construction. Contracts attempting to restrict access to EOAs only can be fooled because `extcodesize` returns 0 during a contract's constructor execution, before bytecode is stored on-chain.
+
+- **Contracts:** `Target.sol`, `FailedAttack.sol`, `Hack.sol`
+- **Guide:** [README](src/bypassContractSizeCheck/README.md)
+- **Key Learning:** Understanding that `extcodesize` returns 0 during contract construction, creating a timing window where contracts can masquerade as EOAs; demonstrating why address-type-based access control is unreliable
+
+### 🔄 Deploy Different Contracts at Same Address
+**Location:** `src/deployDifferentContractsAtTheSameAddress/`
+
+Demonstrates a sophisticated attack combining CREATE2 and selfdestruct to deploy different contracts at the same address. An attacker can deploy a benign contract, get it approved by a DAO, destroy it, then redeploy malicious code at the same address to bypass the original approval.
+
+- **Contracts:** `DAO.sol`, `Proposal.sol`, `Attack.sol`, `DeployerDeployer.sol`, `Deployer.sol`
+- **Guide:** [README](src/deployDifferentContractsAtTheSameAddress/README.md)
+- **Key Learning:** Understanding CREATE2 deterministic deployment, how selfdestruct enables address reuse, the dangers of approving addresses instead of code hashes, and why delegatecall to untrusted addresses is extremely dangerous
+
 ## 🔗 Resources
 
 - [Solidity by Example](https://solidity-by-example.org) - Original tutorial source
