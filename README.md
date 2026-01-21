@@ -149,6 +149,15 @@ Demonstrates a critical vulnerability when contracts assume all ERC20 tokens imp
 - **Guide:** [README](src/wethPermit/README.md)
 - **Key Learning:** Understanding that EIP-2612 permit is optional, how fallback functions can mask failures, the importance of validating permit succeeded, the dangers of separate owner/recipient parameters, and why you should never assume all tokens implement optional standards
 
+### ⛽ 63/64 Gas Rule Vulnerability
+**Location:** `src/63-64GasRule/`
+
+Demonstrates a vulnerability in contracts that measure gas consumption across external calls to provide refunds. Due to EIP-150's 63/64 gas forwarding rule, the EVM only forwards 63/64 of remaining gas to external calls, keeping 1/64 in the caller. Naive gas accounting that doesn't account for this withheld gas will overestimate consumption, leading to overpayment and fund drainage when attackers call with extremely high gas limits.
+
+- **Contracts:** `A.sol`, `B.sol` (demonstrates vulnerable and secure gas accounting patterns)
+- **Guide:** [README](src/63-64GasRule/README.md)
+- **Key Learning:** Understanding EIP-150's 63/64 gas forwarding rule, why gas measurements across contract boundaries are inaccurate, how attackers can amplify overpayment by controlling gas limits, the correct formula to account for withheld gas, and why gas-based refund systems should be avoided or carefully implemented with proper accounting
+
 ## 🔗 Resources
 
 - [Solidity by Example](https://solidity-by-example.org) - Original tutorial source
